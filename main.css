@@ -1,0 +1,302 @@
+/*Reset Page*/
+
+*{
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+
+  font-family: 'GothamMedium';
+}
+
+a{
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li{
+  list-style: none;
+  display: inline;
+}
+
+@font-face {
+  font-family: GothamMedium;
+  src: url(./Assests/fonts/GothamMedium.otf);
+}
+
+@font-face {
+  font-family: GothamBook;
+  src: url(./Assests/fonts/GothamMedium.otf);
+}
+
+/*Header-------------------------------------------------------------------------------------------------*/
+header{
+  width: 100%;
+  
+  display: flex;
+  flex-direction: row;
+
+  position: absolute;
+  top:0;
+  left:0;
+}
+/*LogoLeft MenuCenter------------------------------------------------------------------------------------*/
+.logoLeft{
+  width: 300px;
+  padding: 10px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoLeft img{
+  width: 150px;
+  height: auto;
+}
+
+/*Header MenuCenter------------------------------------------------------------------------------------*/
+.menuCenter{
+  flex: 1;
+}
+.menuCenter nav ul{
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.menuCenter nav ul li{
+  margin-top: 10px;
+  padding: 10px;
+}
+.menuCenter nav ul li:hover , .menuRight nav ul li:hover, .menuSecond div:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.menuCenter nav ul li a{
+  color: black;
+  font-size: 18px;
+}
+
+/*Header MenuRight------------------------------------------------------------------------------------*/
+.menuRight{
+  width: 300px;
+}
+
+.menuRight nav ul{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menuRight nav ul li{
+  margin-top: 10px;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+.menuRight nav ul li a{
+  color: black;
+  font-size: 18px;
+}
+
+/*Main------------------------------------------------------------------------------------------------*/
+
+main{
+  background-image: url('./Assests/img/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+/*Main.Model------------------------------------------------------------------------------------------*/
+.model{
+  height: 45vh ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.model p{
+  font-size: 45px;
+}
+
+.model span{
+  font-size: 20px;
+  color: #444;
+}
+
+/*Main.btnsBuy------------------------------------------------------------------------------------------*/
+.btnsBuy{
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.btnsBuy div{
+  margin: 0px 1%;
+  padding: 10px 70px;
+  border-radius: 50px;
+}
+
+.btnsBuy .ord{
+  background-color: rgba(50, 50, 50, 0.9);
+}
+
+.btnsBuy .ord a{
+  color: white;
+}
+
+.btnsBuy .inv{
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+
+.arrow{
+  background-image: url('./Assests/img/down.png');
+  background-size: 3%;
+  background-position: 48% 50%;
+  background-repeat: no-repeat;
+  height: 10vh;
+
+
+  animation: KeyDown;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes KeyDown{
+  0%   { height: 10vh;}
+  50%  { height: 13vh;}
+  100% { height: 10vh;}
+}
+
+/*menuSecond------------------------------------------------------------------------------------------------*/
+
+.menuSecond{
+  display: none;
+}
+
+/*Aside----------------------------------------------------------------------------------------------------*/
+
+.oppacity{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  transition: width 0.5s;
+}
+
+.menuMobile{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0vw;
+  height: 100vh;
+  background-color: white;
+  display: block;
+
+  overflow-y:scroll;
+  transition: width 0.2s;
+}
+
+.closeMenuMobile{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 5% 5% 0 0;
+}
+
+.closeMenuMobile div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+
+aside nav ul{
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
+
+aside nav ul li{
+  margin-top: 8%;
+}
+
+
+/*@Media screen---------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 1185px) {
+  .menuRight{
+    display: none;
+  }
+  .menuCenter{
+    display: none;
+  }
+  .menuSecond{
+    display: flex;
+    flex: 1;
+
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .menuSecond div{
+    margin-right: 5%;
+    padding: 1%;
+    
+    color: black;
+    font-size: 18px;
+
+    cursor: pointer;
+  }
+  .logoLeft{
+    width: 200px;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 630px){
+  .btnsBuy{
+    flex-direction: column;
+    padding: 0 40px;
+  }
+  .btnsBuy .ord {
+    margin-top: 30%;
+    text-align: center;
+    font-size: 14px;
+  }
+  .btnsBuy .inv {
+    margin-top: 5%;
+    text-align: center;
+    font-size: 14px;
+  }
+  .btnsBuy div{
+    width: 100%;
+  }
+  main{
+    background-size:cover;
+    background-repeat: no-repeat;
+  }
+  .model p{
+    font-size: 35px;
+  }
+  .model span{
+    font-size: 15px;
+  }
+}
